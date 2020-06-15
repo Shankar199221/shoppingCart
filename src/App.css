@@ -1,0 +1,227 @@
+.container{
+    background-color:white;
+    font-size: .8rem;
+    min-height: 100vh;
+    margin: 0 2rem;
+    
+}
+.container-fluid{
+    background-color: lightgray;
+}
+
+.header{
+   
+    font-weight: 400;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.11);
+}
+.header__head{
+   padding-top: 20px;
+    text-transform: uppercase;
+}
+.header__para{
+    font-size: .8rem;
+    padding-left: .6rem;
+    margin-top: 22px;
+}
+.shop{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+/*   ///////////////////shop__topbar////////////////// */
+.shop__topbar{
+    font-weight: 600;
+     padding-top: 10px;
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.692); */
+  
+}
+ 
+.topbar{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+    align-items: stretch;
+    letter-spacing: 2px;
+}
+
+.topbar-item__items{
+    flex: 0 0 60%;
+    padding-left: .6rem;
+  
+}
+.topbar-item__size{
+    padding-left: 2rem;
+    flex: 0 0 7%;
+}
+.topbar-item__qty{
+   padding-left: 4rem;
+    /* flex: 0 0 2; */
+    margin-right: auto;
+
+}
+.topbar-item__price{
+    flex: 0 0 20%;
+    padding-left: 9rem;
+}
+
+/*   ///////////////////shop__mainmenu////////////////// */
+.shop__mainmenu{
+  
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+  
+}
+/*   ///////////////////shop__bottommenu//////////////////
+ ////////////////////shop__bottommenu  /////////////        */
+.shop__bottommenu{
+    border-top: 1rem solid lightgray;
+    display: flex;
+}
+.col1{
+   margin-top: 2rem;
+   font-size: 1.1rem;
+    flex: 0 0 30%;
+    margin-right: 5rem;
+}
+
+.col1__head{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.1rem;
+}
+.col1__subhead{
+    margin-bottom: 1.1rem;
+}
+.col1__underline{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* ///////////////col2 ////////////////////// */
+
+.col2{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    flex: 0 0 60%;
+}
+.col2__part1{
+    
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid lightgrey;
+}
+.col2__part1__s1{
+    font-size: 1rem;
+    text-transform: uppercase;
+    /* margin-left: .2rem; */
+    flex:0 0 50%
+}
+
+.col2__part1__s2{
+   padding-left: 7rem;
+    flex:0 0 30%
+}
+.col2__part1__s3{
+    /* margin-right: .2rem; */
+  
+}
+.part1-input{
+    padding: .3rem .5rem;
+}
+.part1-button{
+    padding: .3rem .5rem;
+    background-color: white;
+}
+/* /////////col2__part2//////////// */
+.col2__part2{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid lightgrey;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.col2__part2__r1{
+   flex: 0 0 75%;
+   margin: 1rem 0;
+}
+.col2__part2__r2{
+   flex: 0 0 25%;
+   margin: 1rem 0;
+   padding-left: 4rem;
+  
+}
+.col2__part2__r3{
+    margin-top: 2rem;
+    flex: 0 0 75%;
+    margin: 1rem 0;
+ }
+ .col2__part2__r4{
+    margin-top: 2rem;
+    flex: 0 0 25%;
+    margin: 1rem 0;
+    padding-left: 4rem;
+ }
+ .col2__part2__r5{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex: 0 0 75%;
+    margin: 1rem 0;
+ }
+ .col2__part2__r5__m2{
+     font-size: .8rem;
+     font-weight: 200;
+ }
+ .col2__part2__r6{
+     margin-top: 2rem;
+    flex: 0 0 25%;
+    margin: 1rem 0;
+    padding-left: 4rem;
+    margin-bottom: 2rem;
+ }
+ /* ///////////col2__part3////////// */
+
+ .col2__part3{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 5px solid lightgray;
+     padding: 1rem 0;
+     
+ }
+ .col2__part3__t1{
+     margin-top: 3rem 0;
+     flex: 0 0 80%;
+ }
+ .col2__part3__t1__h4{
+     text-transform: uppercase;
+ }
+ .col2__part3__t1__p{
+     font-weight: 300;
+     
+ }
+ .col2__part3__t2{
+     flex: 0 0 15%;
+     font-size: 1.3rem;
+    padding-left: 2rem;
+ }
+ /* ////////////col2__part4col2//////////// */
+ .col2__part4{
+     display: flex;
+     text-transform: uppercase;
+     align-items: center;
+     justify-content: flex-end;
+     margin: 1.1rem 0;
+ }
+ .col2__part4__c1{
+     padding-right: 2.2rem;
+     font-size: 1rem;
+     text-decoration: underline;
+ }
