@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import './ModalpopUP.css' 
-// import { editProductsAction } from '../../Actions/ProductsAction'
+import { editProductsAction } from '../../Actions/ProductsAction'
 
 
 function ModalpopUp({id,log}) {
@@ -12,26 +12,26 @@ function ModalpopUp({id,log}) {
     const [data,setData] =useState(log)
     
     const [quantty,setQuanty] =useState(data.p_quantity)
-    const  [size,setSize]=useState(data.p_selected_size.name)
+    const  [size,setSize]=useState(data.p_selected_size.code)
     const [color,setColor] =useState(data.p_selected_color.name)
    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const dispatch =useDispatch();
-    // const updaData =(data)=>dispatch(editProductsAction(data))
+    const dispatch =useDispatch();
+    const updaData =(data)=>dispatch(editProductsAction(data))
     
     const handleSubmit=()=>{
        setData({
          ...data,
          p_quantity:quantty,
-         p_selected_size:size,
-         p_selected_color:color
+         p_selected_size:{code:size},
+         p_selected_color:{name:color}
        }) 
-      //updaData(data)
-        console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.name,"updated")
+      updaData(data)
+        console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.code,"updated")
     }
-    //console.log(data,"datataaaaaa ")
-    console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.name,"before")
+    console.log(data,"datataaaaaa ")
+    console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.code,"before")
    
    
  
@@ -64,7 +64,7 @@ function ModalpopUp({id,log}) {
                 <div className="manuval">
                 <select value={size}  onChange={(e)=>setSize(e.target.value)}  >
                   {log.p_available_options.sizes.map((size)=>{
-                    return  <option >{size.name}</option>
+                    return  <option >{size.code}</option>
                          
                 })}
                   </select>
