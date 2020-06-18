@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const ProductsAction= () => {
 
          return async  (dispatch)=>{
@@ -13,13 +14,20 @@ export const ProductsAction= () => {
 
 
 export const deleteProductsAction= (id) => {
+   
+     return  (dispatch)=>{
+        
+               dispatch({type:"DELETE_DATA",payload:id})
+        console.log(id)
+ }
+}
 
-     return async  (dispatch)=>{
-           await axios.delete(`http://localhost:5000/posts/${id}`);
-          
-          console.log(id)
-      dispatch({type:"DELETE__DATA",payload:id})
-      
+export const editProductsAction= (data) => {
+   
+     return   (dispatch)=>{
+         
+               dispatch({type:"EDIT_DATA",payload:data})
+
  }
 }
 

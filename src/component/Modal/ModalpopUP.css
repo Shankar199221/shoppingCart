@@ -1,0 +1,41 @@
+
+.modal-body{
+    
+    display: flex !important;
+    flex-direction: row !important;
+}
+.content{
+
+}
+.img{
+  margin:2rem 2rem;
+}
+.colors{
+    display: flex;
+    
+   
+}
+.colorsall{
+    /* display: block; */
+    width: 3rem;
+    margin: 5px;
+    height: 2rem;
+}
+.manuval{
+    display: flex;
+}
+.quantity{
+    margin-left: 1rem;
+    width: 4rem;
+}
+.button_edit{
+    background-color: blue;
+    color: white;
+    margin: 1rem;
+ text-transform: uppercase;
+ padding: 5px 3rem;
+}
+.check{
+    margin-left: 1rem;
+    text-decoration: underline;
+}
