@@ -20,7 +20,7 @@ function ProductsReducer(state=initialState,action) {
     if(action.type === "EDIT_DATA"){
         return{
             ...state,
-          data:state.data.map( data => data.p_id === action.payload.p_id ?  action.payload :data)
+          data:state.data.map( data => data.p_id === action.payload.p_id ?  action.payload:data)
         }
     }
    

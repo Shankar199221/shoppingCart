@@ -27,7 +27,7 @@ export const editProductsAction= (data) => {
      return   (dispatch)=>{
          
                dispatch({type:"EDIT_DATA",payload:data})
-
+     console.log(data)
  }
 }
 

@@ -4,28 +4,36 @@ import {useDispatch} from 'react-redux'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import './ModalpopUP.css' 
-import { editProductsAction } from '../../Actions/ProductsAction'
+// import { editProductsAction } from '../../Actions/ProductsAction'
 
 
 function ModalpopUp({id,log}) {
     const [show, setShow] = useState(false);
+    const [data,setData] =useState(log)
     
-    const [quantty,setQuanty] =useState(log.p_quantity)
-    const  [size,setSize]=useState(log.p_selected_size.name)
-    const [color,setColor] =useState(log.p_selected_color.name)
-  
+    const [quantty,setQuanty] =useState(data.p_quantity)
+    const  [size,setSize]=useState(data.p_selected_size.name)
+    const [color,setColor] =useState(data.p_selected_color.name)
+   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const dispatch =useDispatch();
-    const updaData =(data)=>dispatch(editProductsAction(data))
+    // const dispatch =useDispatch();
+    // const updaData =(data)=>dispatch(editProductsAction(data))
     
     const handleSubmit=()=>{
-        updaData({quantty,size,color})
+       setData({
+         ...data,
+         p_quantity:quantty,
+         p_selected_size:size,
+         p_selected_color:color
+       }) 
+      //updaData(data)
+        console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.name,"updated")
     }
+    //console.log(data,"datataaaaaa ")
+    console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.name,"before")
    
    
-    //console.log(log,"log data")
-    //console.log(data,"log data")
  
     return (
       <>
@@ -62,7 +70,7 @@ function ModalpopUp({id,log}) {
                   </select>
                  <input type="number" className="quantity" value={quantty}  onChange={(e)=>setQuanty(e.target.value)} />
                 </div>
-                <button className="button_edit " onSubmit={handleSubmit}>edit</button>
+                <button className="button_edit " onClick={handleSubmit}>edit</button>
                 <div className="check">check product details</div>
 
               </div>
