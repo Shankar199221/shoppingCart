@@ -14,9 +14,11 @@ function ProductList() {
    const dispatch =useDispatch();
    const getData =()=>dispatch(ProductsAction())
    const deleteData =(id)=>dispatch(deleteProductsAction(id))
- 
+   
+   
   console.log(products,"ProductList")
-
+  
+  
     useEffect(() => {
         getData();
       }, []);
@@ -28,6 +30,7 @@ function ProductList() {
     return (
         <>
                {products.map((data)=>{
+                  
                    return <div key={data.p_id} className="product">
                           <div className="product__item image">
                            <img src={`images/${data.p_image}.jpg`} alt={data.p_image}  width="180rem" height="250rem"/>
@@ -44,10 +47,11 @@ function ProductList() {
                                         </ul>
                                     </div>
                                </div>
+                               
                           <div className="product__item size"><h4>{data.p_selected_size.code}</h4></div>
                           <div className="product__item quantity">{data.p_quantity}</div> 
-                          <div className="product__item price">${data.p_price}.00</div>
-
+                          <div className="product__item price">{data.p_quantity * data.p_price}</div>
+                        
                    </div>
                })}
                

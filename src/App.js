@@ -8,6 +8,7 @@ function App() {
    const data =useSelector(state =>state.products.data)
  
    const len = data.length;
+   
   
   return (
       <div className="container-fluid">
@@ -43,7 +44,7 @@ function App() {
                             </div>
                               <div className="col2__part2">
                                   <div className="col2__part2__r1">subtotal</div>
-                                  <div className="col2__part2__r2">$69</div>
+                                  <div className="col2__part2__r2">${data.reduce((acc,data)=> (data.p_price*data.p_quantity)+acc,0 )}</div>
                                   <div className="col2__part2__r3">promotion code aj10 applied</div>
                                   <div className="col2__part2__r4"> $5.90 </div>
                                   <div className="col2__part2__r5">
@@ -57,7 +58,7 @@ function App() {
                                         <h4 className="col2__part3__t1__h4">estimated total</h4>
                                         <div className="col2__part3__t1__p">Tax will be applied during checkout</div>
                                       </div>
-                                    <div className="col2__part3__t2">$53</div>
+                                    <div className="col2__part3__t2">${Number(data.reduce((acc,data)=> (data.p_price*data.p_quantity)+acc,-5.90 ))}</div>
                                 </div>
                                 <div className="col2__part4">
                                     <div className="col2__part4__c1">continue Shopping</div>

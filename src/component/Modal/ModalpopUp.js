@@ -11,7 +11,7 @@ function ModalpopUp({id,log}) {
     const [show, setShow] = useState(false);
     const [data,setData] =useState(log)
     
-    const [quantty,setQuanty] =useState(data.p_quantity)
+    // const [quantty,setQuanty] =useState(data.p_quantity)
     const  [size,setSize]=useState(data.p_selected_size.code)
     const [color,setColor] =useState(data.p_selected_color.name)
    
@@ -21,20 +21,10 @@ function ModalpopUp({id,log}) {
     const updaData =(data)=>dispatch(editProductsAction(data))
     
     const handleSubmit=()=>{
-       setData({
-         ...data,
-         p_quantity:quantty,
-         p_selected_size:{code:size},
-         p_selected_color:{name:color}
-       }) 
-      updaData(data)
-        console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.code,"updated")
+      updaData(data)  
     }
-    console.log(data,"datataaaaaa ")
-    console.log( data.p_quantity,data.p_selected_color.name,data.p_selected_size.code,"before")
    
-   
- 
+
     return (
       <>
         <Button variant="white" onClick={handleShow} className="font-weight-bolder">
@@ -57,18 +47,18 @@ function ModalpopUp({id,log}) {
                 <h3>{log.p_style}</h3>
                 <div className="colors">{log.p_available_options.colors.map((color)=>{
                     return <div  key={color.hexcode}  >
-                               <div onClick={()=>setColor(color.name)} className="colorsall" style={{backgroundColor:`${color.hexcode}`}}></div>
+                               <div onClick={()=>setData({...data,p_selected_color:{name:color.name}})} className="colorsall" style={{backgroundColor:`${color.hexcode}`}}></div>
                           </div>
                 })}</div>
-                <h3>Color:{color}</h3>
+                <h3>Color:{data.p_selected_color.name}</h3>
                 <div className="manuval">
-                <select value={size}  onChange={(e)=>setSize(e.target.value)}  >
+                <select value={data.p_selected_size.code}  onChange={(e)=>setData({...data,p_selected_size:{code:e.target.value}})}  >
                   {log.p_available_options.sizes.map((size)=>{
-                    return  <option >{size.code}</option>
+                    return  <option value={size.code} >{size.name}</option>
                          
                 })}
                   </select>
-                 <input type="number" className="quantity" value={quantty}  onChange={(e)=>setQuanty(e.target.value)} />
+                 <input type="number" className="quantity" value={data.p_quantity}  onChange={(e)=>setData({...data,p_quantity:e.target.value})} />
                 </div>
                 <button className="button_edit " onClick={handleSubmit}>edit</button>
                 <div className="check">check product details</div>
